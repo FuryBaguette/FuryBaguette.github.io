@@ -49,6 +49,11 @@
             </div>
         </div>
     </div>
+    <div id="sidemenu">
+        <ul id="sidemenuul" class="form">
+
+        </ul>
+    </div>
     <div id="bottom-icons">
         <a id="icon-github" href="https://github.com/FuryBaguette" target="_blank"></a>
         <a id="icon-donate" href="http://buymeacoff.ee/FuryBaguette" target="_blank"></a>
@@ -57,11 +62,16 @@
 <footer>
     <script type="text/javascript">
         $(document).ready(function(){
-            $('.shell').resizable({
+            var shell = $('.shell');
+            shell.resizable({
                 minHeight: 108,
                 minWidth: 250,
             }).draggable({
-                handle: '> .status-bar .title'
+                handle: '> .status-bar .title',
+                drag: function() {
+                    var offset = shell.offset();
+                    $('#sidemenu').offset({top: offset.top, left: offset.left});
+                }
             });
             $('#bottom-icons a').hover(
                 function () {
