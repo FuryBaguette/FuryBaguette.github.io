@@ -20,7 +20,7 @@ var configs = (function () {
         date_help: "Print the system date and time.",
         help_help: "Print this menu.",
         clear_help: "Clear the terminal screen.",
-        welcome: "Welcome to FuryBaguette's website!\nIf you're part of the linux master race or you have time to waste, execute the 'help' command, otherwise, use the noob friendly colored side menu on your left.",
+        welcome: "Welcome to FuryBaguette's website!\nIf you're part of the linux master race or you have time to waste, execute the 'help' command, otherwise, use the noob friendly side menu on your right.",
         internet_explorer_warning: "NOTE: I see you're using internet explorer, this website won't work properly.",
         welcome_file_name: "welcome_message.txt",
         invalid_command_message: "<value>: command not found.",
@@ -40,6 +40,31 @@ var configs = (function () {
         donate_url: "http://buymeacoff.ee/FuryBaguette",
         github_url: "https://github.com/FuryBaguette",
         type_delay: 0
+    };
+    return {
+        getInstance: function (options) {
+            instance === void 0 && (instance = new Singleton(options));
+            return instance;
+        }
+    };
+})();
+
+var commands = (function () {
+    var instance;
+    var Singleton = function (options) {
+        var options = options || Singleton.defaultOptions;
+        for (var key in Singleton.defaultOptions) {
+            this[key] = options[key] || Singleton.defaultOptions[key];
+        }
+    };
+    Singleton.defaultOptions = {
+        "repos": "repos",
+        "github": "github",
+        "donate": "donate",
+        "date": "date",
+        "help": "help",
+        "clear": "clear",
+        "whoami": "whoami"
     };
     return {
         getInstance: function (options) {
@@ -95,7 +120,7 @@ var main = (function () {
         WHOAMI: { value: "whoami", help: configs.getInstance().whoami_help }
     };
 
-    var Terminal = function (prompt, cmdLine, output, user, host, root, outputTimer) {
+    var Terminal = function (prompt, cmdLine, output, sidemenu, sidemenuul, user, host, root, outputTimer) {
         if (!(prompt instanceof Node) || prompt.nodeName.toUpperCase() !== "DIV") {
             throw new InvalidArgumentException("Invalid value " + prompt + " for argument 'prompt'.");
         }
@@ -112,6 +137,9 @@ var main = (function () {
         this.prompt = prompt;
         this.cmdLine = cmdLine;
         this.output = output;
+        this.sidemenu = sidemenu;
+        this.sidemenuul = sidemenuul;
+        this.sidemenuElements = [];
         this.typeSimulator = new TypeSimulator(outputTimer, output);
     };
 
@@ -128,6 +156,7 @@ var main = (function () {
 
     Terminal.prototype.init = function () {
         this.cmdLine.disabled = true;
+        this.prepareSideMenu();
         this.lock();
         this.cmdLine.addEventListener("keydown", function (event) {
             if (event.which === 13 || event.keyCode === 13) {
@@ -149,6 +178,61 @@ var main = (function () {
     Terminal.makeElementAppear = function (element) {
         element.style.opacity = 1;
         element.style.transform = "translateX(0)";
+    };
+
+    Terminal.prototype.prepareSideMenu = function () {
+        var capFirst = (function () {
+            return function (string) {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+        })();
+        for (var command in commands.getInstance()) {
+            var lielem = document.createElement("li");
+            var icon = document.createElement("i");
+            var element = document.createElement("a");
+
+            element["href"] = "#";
+            icon.classList.add("fa");
+            var fonticon = "fa-cog";
+            switch (command) {
+                case "repos":
+                    fonticon = "fa-code";
+                    break;
+                case "github":
+                    fonticon = "fa-github";
+                    break;
+                case "donate":
+                    fonticon = "fa-money";
+                    break;
+                case "date":
+                    fonticon = "fa-calendar";
+                    break;
+                case "help":
+                    fonticon = "fa-question";
+                    break;
+                case "clear":
+                    fonticon = "fa-eraser";
+                    break;
+                case "whoami":
+                    fonticon = "fa-user";
+                    break;
+            }
+            icon.classList.add(fonticon);
+            lielem.appendChild(element);
+            element.onclick = function (command, event) {
+                this.cmdLine.value = command;
+                this.handleCmd();
+            }.bind(this, command);
+            icon.appendChild(document.createTextNode(capFirst(command)));
+            element.appendChild(icon);
+            element.appendChild(icon);
+            this.sidemenuul.appendChild(lielem);
+            this.sidemenuElements.push(lielem);
+        }
+    };
+
+    Terminal.prototype.handleSidenav = function (event) {
+        ignoreEvent(event);
     };
 
     Terminal.prototype.lock = function () {
@@ -336,6 +420,8 @@ var main = (function () {
                 document.getElementById("prompt"),
                 document.getElementById("cmdline"),
                 document.getElementById("output"),
+                document.getElementById("sidemenu"),
+                document.getElementById("sidemenuul"),
                 configs.getInstance().user,
                 configs.getInstance().host,
                 configs.getInstance().is_root,
