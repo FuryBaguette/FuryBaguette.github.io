@@ -122,7 +122,7 @@ body {
 	height: 150px;
 }
 
-/* Additation */
+/* Shell */
 .shell {
     width: 600px;
     height: 400px;
@@ -137,7 +137,10 @@ body {
     -moz-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.5);
     box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.5);
     z-index: 1;
+    float: left;
 }
+
+/* Shell - status bar*/
 
 .shell .status-bar {
     display: block;
@@ -213,6 +216,8 @@ body {
     line-height: 1.5em;
 }
 
+/* Shell - Terminal */
+
 .shell .terminal {
     border-color: transparent;
     background: #300924;
@@ -251,6 +256,8 @@ body {
 {
     background-color: var(--color, #aaa);
 }
+
+/* Bottom icons */
 
 #bottom-icons {
     position: absolute;
@@ -333,6 +340,88 @@ body {
     box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
     opacity: 0.85 !important;
     color: #000000 !important;
+}
+
+ul.form {
+    background:#d6d6d6;
+    width:143px;
+    z-index:10;
+    padding:0;
+    list-style: none;
+    overflow:hidden;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.form li a {
+    padding-left:15px;
+    height:36px;
+    display:block;
+    overflow:hidden;
+    position:relative;
+    text-decoration:none;
+    color:#686868;
+
+    -webkit-transition:all 0.1s linear;
+    -moz-transition:all 0.1s linear;
+    -o-transition:all 0.1s linear;
+    transition:all 0.2s linear;
+}
+
+.form li a:hover {
+    background:#efefef;
+}
+
+.form li:first-child a:hover, .form li:first-child a {
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+
+.form li:last-child a:hover, .form li:last-child a {
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+}
+
+.form li a:hover i {
+    color:#ea4f35;
+}
+
+.form i {
+    margin-right:15px;
+
+    -webkit-transition:all 0.2s linear;
+    -moz-transition:all 0.2s linear;
+    -o-transition:all 0.2s linear;
+    transition:all 0.2s linear;
+    line-height: 36px;
+}
+
+.form i::before {
+    margin-right: 10px;
+}
+
+.form em {
+    font-size: 10px;
+    background: #ea4f35;
+    padding: 3px 5px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    font-style: normal;
+    color: #fff;
+    margin-top: 17px;
+    margin-right: 15px;
+    line-height: 10px;
+    height: 10px;
+    float:right;
+}
+
+.form li.selected a {
+    background:#efefef;
 }
 
 @media screen and (max-height: 450px) {
