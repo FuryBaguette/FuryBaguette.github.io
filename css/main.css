@@ -8,7 +8,7 @@ body {
     font-size: 13pt;
     font-family: monospace;
     color: white;
-    background-color: white;
+    background-color: #6d6d6d;
 }
 #cmdline {
     outline: none;
