@@ -310,8 +310,47 @@ var main = (function () {
     };
 
     Terminal.prototype.repos = function (cmdComponents) {
-        this.output.innerHTML += "<div id=\"repos-container\"> <div id=\"repos-wrapper\"> <div id=\"repos\"> <div class=\"hover-flip\"> <a href=\"https://github.com/FuryBaguette/SwitchLayoutEditor\" target=\"_blank\"> <div class=\"repos-item\"> <div class=\"front\"> <h3>SwitchLayoutEditor</h3> <p>This program can edit and render BFLYT files commonly used for layouts in Switch interfaces and games. It enables you to easily create/edit themes.</p></div><div class=\"back layout-editor\"></div></div></a> </div><div class=\"hover-flip\"> <a href=\"https://github.com/FuryBaguette/Brane\" target=\"_blank\"> <div class=\"repos-item\"> <div class=\"front\"> <h3>Brane</h3> <p>Game management/loader for the Nintendo Switch.</p></div><div class=\"back brane\"></div></div></a> </div><div class=\"hover-flip\"> <div class=\"repos-item\"> <div class=\"front\"> <h3>Test</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget felis turpis. Sed ultricies euismod mi a suscipit.</p></div><div class=\"back\"> <h3>Back</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget felis turpis. Sed ultricies euismod mi a suscipit.</p></div></div></div><div class=\"hover-flip\"> <div class=\"repos-item\"> <div class=\"front\"> <h3>Test</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget felis turpis. Sed ultricies euismod mi a suscipit.</p></div><div class=\"back\"> <h3>Back</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget felis turpis. Sed ultricies euismod mi a suscipit.</p></div></div></div></div></div></div>";
-        this.output.innerHTML += "<br/>";
+        //this.output.innerHTML += "<div id=\"repos-container\"> <div id=\"repos-wrapper\"> <div id=\"repos\"> <div class=\"hover-flip\"> <a href=\"https://github.com/FuryBaguette/SwitchLayoutEditor\" target=\"_blank\"> <div class=\"repos-item\"> <div class=\"front\"> <h3>SwitchLayoutEditor</h3> <p>This program can edit and render BFLYT files commonly used for layouts in Switch interfaces and games. It enables you to easily create/edit themes.</p></div><div class=\"back layout-editor\"></div></div></a> </div><div class=\"hover-flip\"> <a href=\"https://github.com/FuryBaguette/Brane\" target=\"_blank\"> <div class=\"repos-item\"> <div class=\"front\"> <h3>Brane</h3> <p>Game management/loader for the Nintendo Switch.</p></div><div class=\"back brane\"></div></div></a> </div><div class=\"hover-flip\"> <div class=\"repos-item\"> <div class=\"front\"> <h3>Test</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget felis turpis. Sed ultricies euismod mi a suscipit.</p></div><div class=\"back\"> <h3>Back</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget felis turpis. Sed ultricies euismod mi a suscipit.</p></div></div></div><div class=\"hover-flip\"> <div class=\"repos-item\"> <div class=\"front\"> <h3>Test</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget felis turpis. Sed ultricies euismod mi a suscipit.</p></div><div class=\"back\"> <h3>Back</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget felis turpis. Sed ultricies euismod mi a suscipit.</p></div></div></div></div></div></div>";
+        var allRepos = [
+          ['SwitchLayoutEditor', 'This program can edit and render BFLYT files commonly used for layouts in Switch interfaces and games. It enables you to easily create/edit themes.', 'https://github.com/FuryBaguette/SwitchLayoutEditor', "https://raw.githubusercontent.com/FuryBaguette/SwitchLayoutEditor/master/Screenshots/MainMenu.png"],
+          ['Brane', 'Game management for the Nintendo Switch.', 'https://github.com/FuryBaguette/Brane', 'https://raw.githubusercontent.com/FuryBaguette/Brane/master/icon.jpg?token=ArzMle1Vi9kYuDHth0Hs1m67Z_CeMwE3ks5cntwIwA%3D%3D'],
+          ['Testing', 'Some description text', 'https://somesite.com', 'https://raw.githubusercontent.com/FuryBaguette/Brane/master/icon.jpg?token=ArzMle1Vi9kYuDHth0Hs1m67Z_CeMwE3ks5cntwIwA%3D%3D'],
+          ['Testing', 'Some description text', 'https://somesite.com', 'https://raw.githubusercontent.com/FuryBaguette/Brane/master/icon.jpg?token=ArzMle1Vi9kYuDHth0Hs1m67Z_CeMwE3ks5cntwIwA%3D%3D'],
+        ];
+
+        for (var i = 0; i <= allRepos.length; i++) {
+            var div = document.createElement("div");
+            div.classList.add("proj-item");
+            var title = document.createElement("p");
+            title.classList.add("title");
+            title.innerHTML = allRepos[i][0];
+            div.appendChild(title);
+
+            var desc = document.createElement("p");
+            desc.classList.add("description");
+            desc.innerHTML = allRepos[i][1];
+            div.appendChild(desc);
+
+            var url = document.createElement("a");
+            url.classList.add("url");
+            url["href"] = allRepos[i][2];
+            url["target"] = "_blank";
+
+            var thumb = document.createElement("img");
+            thumb.classList.add("thumbnail");
+            thumb["src"] = allRepos[i][3];
+            div.appendChild(thumb);
+
+            url.appendChild(div);
+
+            this.output.appendChild(url);
+
+            /*this.output.innerHTML += "<br/>";
+            this.output.innerHTML += allRepos[i][1];
+            this.output.innerHTML += "<br/>";
+            this.output.innerHTML += allRepos[i][2];
+            this.output.innerHTML += "<br/>";*/
+        }
         this.type("Click on a card to get to the project page", this.unlock.bind(this));
     };
 
