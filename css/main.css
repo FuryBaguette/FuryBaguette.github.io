@@ -429,9 +429,10 @@ ul.form {
 
 /* Shell - Repositories */
 #repos-container {
-    width: 600px;
+    width: 100%;
     height: 200px;
     overflow-x: scroll;
+    border-radius: 7px;
 }
 
 #repos-wrapper {
@@ -441,7 +442,7 @@ ul.form {
 
 #repos {
     width: 100%;
-    height: 100%;
+    height: calc(100% - 20px);
     background: #d4d4d4;
     border-radius: 7px;
     padding: 10px;
@@ -449,7 +450,7 @@ ul.form {
 
 #repos .hover-flip {
     width: 300px;
-    height: 200px;
+    height: 100%;
     display: inline-block;
     text-align: center;
 
