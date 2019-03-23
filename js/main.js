@@ -335,6 +335,7 @@ var main = (function () {
             url.classList.add("url");
             url["href"] = allRepos[i][2];
             url["target"] = "_blank";
+            url["alt"] = allRepos[i][0];
 
             var thumb = document.createElement("img");
             thumb.classList.add("thumbnail");
