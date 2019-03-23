@@ -85,6 +85,11 @@
             });
             $('#sidenav').hide();
         });
+        $(document).on("mouseenter", ".repos-item", function(e) {
+           $(this).addClass("flip");
+        }).on("mouseleave", ".repos-item", function(e) {
+            $(this).removeClass("flip");
+        });
     </script>
 </footer>
 </html>

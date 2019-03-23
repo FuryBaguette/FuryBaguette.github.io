@@ -427,6 +427,113 @@ ul.form {
     background:#efefef;
 }
 
+/* Shell - Repositories */
+#repos-container {
+    width: 600px;
+    height: 200px;
+    overflow-x: scroll;
+}
+
+#repos-wrapper {
+    width: 1300px;
+    height: 100%;
+}
+
+#repos {
+    width: 100%;
+    height: 100%;
+    background: #d4d4d4;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+#repos .hover-flip {
+    width: 300px;
+    height: 200px;
+    display: inline-block;
+    text-align: center;
+
+    position: relative;
+    display: block;
+    float: left;
+    margin-right: 10px;
+}
+
+#repos .hover-flip a,
+#repos .hover-flip a:link,
+#repos .hover-flip a:visited,
+#repos .hover-flip a:active {
+    color: black;
+}
+
+#repos .hover-flip .repos-item {
+    width: 100%;
+    height: 100%;
+}
+
+#repos .hover-flip .repos-item .front,
+#repos .hover-flip .repos-item .back{
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 7px;
+    display: inline-block;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#repos .hover-flip .repos-item .front {
+    z-index: 900;
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform: rotateX(0deg) rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+#repos .hover-flip .repos-item .back {
+    z-index: 1000;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+#repos .hover-flip .repos-item.flip .front {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+}
+
+#repos .hover-flip .repos-item.flip .back {
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform: rotateX(0deg) rotateY(0deg);
+}
+
+#repos .hover-flip .repos-item .back.layout-editor {
+    background-image: url(https://raw.githubusercontent.com/FuryBaguette/SwitchLayoutEditor/master/Screenshots/MainMenu.png);
+    background-size: 100%;
+}
+
+#repos .hover-flip .repos-item .back.brane {
+    background-image: url(https://raw.githubusercontent.com/FuryBaguette/Brane/master/icon.jpg?token=ArzMle1Vi9kYuDHth0Hs1m67Z_CeMwE3ks5cntwIwA%3D%3D);
+    background-size: 100%;
+}
+
 @media screen and (max-height: 450px) {
     body {
         font-size: 11pt;

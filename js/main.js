@@ -310,7 +310,9 @@ var main = (function () {
     };
 
     Terminal.prototype.repos = function (cmdComponents) {
-        this.type("My repos", this.unlock.bind(this));
+        this.output.innerHTML += "<div id=\"repos-container\"> <div id=\"repos-wrapper\"> <div id=\"repos\"> <div class=\"hover-flip\"> <a href=\"https://github.com/FuryBaguette/SwitchLayoutEditor\" target=\"_blank\"> <div class=\"repos-item\"> <div class=\"front\"> <h3>SwitchLayoutEditor</h3> <p>This program can edit and render BFLYT files commonly used for layouts in Switch interfaces and games. It enables you to easily create/edit themes.</p></div><div class=\"back layout-editor\"></div></div></a> </div><div class=\"hover-flip\"> <a href=\"https://github.com/FuryBaguette/Brane\" target=\"_blank\"> <div class=\"repos-item\"> <div class=\"front\"> <h3>Brane</h3> <p>Game management/loader for the Nintendo Switch.</p></div><div class=\"back brane\"></div></div></a> </div><div class=\"hover-flip\"> <div class=\"repos-item\"> <div class=\"front\"> <h3>Test</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget felis turpis. Sed ultricies euismod mi a suscipit.</p></div><div class=\"back\"> <h3>Back</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget felis turpis. Sed ultricies euismod mi a suscipit.</p></div></div></div><div class=\"hover-flip\"> <div class=\"repos-item\"> <div class=\"front\"> <h3>Test</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget felis turpis. Sed ultricies euismod mi a suscipit.</p></div><div class=\"back\"> <h3>Back</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget felis turpis. Sed ultricies euismod mi a suscipit.</p></div></div></div></div></div></div>";
+        this.output.innerHTML += "<br/>";
+        this.type("Click on a card to get to the project page", this.unlock.bind(this));
     };
 
     Terminal.prototype.donate = function (cmdComponents) {
