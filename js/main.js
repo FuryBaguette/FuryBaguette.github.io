@@ -317,8 +317,7 @@ var main = (function () {
           ['Testing', 'Some description text', 'https://somesite.com', 'https://raw.githubusercontent.com/FuryBaguette/Brane/master/icon.jpg?token=ArzMle1Vi9kYuDHth0Hs1m67Z_CeMwE3ks5cntwIwA%3D%3D'],
           ['Testing', 'Some description text', 'https://somesite.com', 'https://raw.githubusercontent.com/FuryBaguette/Brane/master/icon.jpg?token=ArzMle1Vi9kYuDHth0Hs1m67Z_CeMwE3ks5cntwIwA%3D%3D'],
         ];
-
-        for (var i = 0; i <= allRepos.length; i++) {
+        for (var i = 0; i < allRepos.length; i++) {
             var div = document.createElement("div");
             div.classList.add("proj-item");
             var title = document.createElement("p");
@@ -345,7 +344,6 @@ var main = (function () {
             url.appendChild(div);
 
             this.output.appendChild(url);
-
             /*this.output.innerHTML += "<br/>";
             this.output.innerHTML += allRepos[i][1];
             this.output.innerHTML += "<br/>";
