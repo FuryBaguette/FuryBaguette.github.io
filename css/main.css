@@ -124,8 +124,8 @@ body {
 
 /* Shell */
 .shell {
-    width: 600px;
-    height: 400px;
+    width: 100%;
+    height: 70%;
     display: block;
     text-align: left;
     color: #F1F1F1;
@@ -344,7 +344,8 @@ body {
 
 ul.form {
     background:#d6d6d6;
-    width:143px;
+    width:100%;
+    height: 24px;
     z-index:10;
     padding:0;
     list-style: none;
@@ -356,11 +357,25 @@ ul.form {
     -webkit-box-shadow: 0px 5px 20px 0 rgba(0,0,0,0.5);
     -moz-box-shadow: 0px 5px 20px 0 rgba(0,0,0,0.5);
     box-shadow: 0px 5px 20px 0 rgba(0,0,0,0.5);
+
+    display: flex;
+    text-align: center;
+}
+
+ul.form li {
+    flex: 1;
+    width: 14.3%;
+    height: 24px;
+    border-right: 1px solid black;
+}
+
+ul.form li:last-child {
+    border: 0;
 }
 
 .form li a {
     padding-left:15px;
-    height:36px;
+    height:24px;
     display:block;
     overflow:hidden;
     position:relative;
@@ -400,7 +415,7 @@ ul.form {
     -moz-transition:all 0.2s linear;
     -o-transition:all 0.2s linear;
     transition:all 0.2s linear;
-    line-height: 36px;
+    line-height: 24px;
 }
 
 .form i::before {

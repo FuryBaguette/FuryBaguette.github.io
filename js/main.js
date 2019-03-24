@@ -20,7 +20,7 @@ var configs = (function () {
         date_help: "Print the system date and time.",
         help_help: "Print this menu.",
         clear_help: "Clear the terminal screen.",
-        welcome: "Welcome to FuryBaguette's website!\nIf you're part of the linux master race or you have time to waste, execute the 'help' command, otherwise, use the noob friendly side menu on your right.",
+        welcome: "Welcome to FuryBaguette's website!\nIf you're part of the linux master race or you have time to waste, execute the 'help' command, otherwise, use the noob friendly menu at the top.",
         internet_explorer_warning: "NOTE: I see you're using internet explorer, this website won't work properly.",
         welcome_file_name: "welcome_message.txt",
         invalid_command_message: "<value>: command not found.",
