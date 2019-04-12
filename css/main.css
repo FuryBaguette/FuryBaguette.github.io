@@ -172,8 +172,8 @@ body {
 }
 
 .shell .status-bar .buttons {
-    float: left;
-    padding: 2px 0 0 6px;
+    float: right;
+    padding: 2px 6px 0 0;
     position: relative;
     z-index: 1;
     display: block;
