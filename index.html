@@ -1,12 +1,10 @@
 <html>
-
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FuryBaguette</title>
     <link rel="icon" href="./img/favicon.png" type="image/x-icon" />
-	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141261841-1"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
@@ -14,89 +12,16 @@
 	  gtag('js', new Date());
 	  gtag('config', 'UA-141261841-1');
 	</script>
-
-    <link href="https://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.css" rel="stylesheet" type="text/css" />
-    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
-    <link href="./css/main.css" rel="stylesheet" type="text/css" />
-
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <script src="./js/polyfills.js"></script>
-    <script src="./js/main.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet" type="text/css" />
+	<link href="./css/fury.css" rel="stylesheet" type="text/css" />
 </head>
-
 <body>
-    <div id="sidenav">
-        <button id="sidenavBtn">&#9776;</button>
-        <img id="profilePic" alt="Me" src="./img/avatar.png">
-    </div>
-    <div id="sidemenu">
-        <ul id="sidemenuul" class="form">
-
-        </ul>
-    </div>
-    <div id="container" class="shell ">
-        <div class="status-bar">
-            <div class="buttons">
-                <a href="javascript:;" class="minimize" title="Minimize">
-                    <i class="fa fa-minus"></i>
-                </a>
-                <a href="javascript:;" class="enlarge" title="Enlarge">
-                    <i class="fa fa-plus"></i>
-                </a>
-				<a href="javascript:;" class="close" title="Close">
-                    <i class="fa fa-times"></i>
-                </a>
-            </div>
-            <div class="title ui-draggable-handle">guest@furybaguette.me: ~</div>
-        </div>
-        <div class="terminal">
-            <div id="output"></div>
-            <div id="input-line" class="input-line">
-                <div id="prompt" class="prompt-color"></div>&nbsp;
-                <div>
-                    <input type="text" id="cmdline" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
-                        autofocus/>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- <div id="bottom-icons">
-        <a id="icon-github" href="https://github.com/FuryBaguette" target="_blank"></a>
-        <a id="icon-donate" href="http://buymeacoff.ee/FuryBaguette" target="_blank"></a>
-    </div> -->
+	<h1>FuryBaguette</h1>
+	<div id="links">
+		<a href="https://github.com/FuryBaguette" target="_blank"><i class="icon-github"></i><h3>Github</h3></a>
+		<a href="https://www.buymeacoffee.com/FuryBaguette" target="_blank"><i class="icon-donate"></i><h3>Donate a baguette</h3></a>
+	</div>
+	<div class="blur"></div>
 </body>
-<footer>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            var shell = $('.shell');
-            shell.resizable({
-                minHeight: 108,
-                minWidth: 250,
-            }).draggable({
-                handle: '> .status-bar .title',
-                drag: function() {
-                    var offset = shell.offset();
-                }
-            });
-            $('#bottom-icons a').hover(
-                function () {
-                    $(this).addClass("icon-hover");
-                }, function () {
-                    $(this).removeClass("icon-hover");
-                }
-            );
-            $('.terminal').click(function () {
-                $('#cmdline').focus();
-            });
-            $('#sidenav').hide();
-        });
-        $(document).on("mouseenter", ".repos-item", function(e) {
-           $(this).addClass("flip");
-        }).on("mouseleave", ".repos-item", function(e) {
-            $(this).removeClass("flip");
-        });
-    </script>
-</footer>
 </html>
