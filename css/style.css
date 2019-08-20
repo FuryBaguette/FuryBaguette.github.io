@@ -1,7 +1,16 @@
-body{
+body {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 	overflow: hidden;
 	font-family: 'Livvic';
@@ -19,32 +28,45 @@ h1 {
 
 h3 {
 	font-size: 2rem;
-    font-weight: 400;
-    display: inline-block;
+	font-weight: 400;
+	display: inline-block;
 	margin: 0;
 }
 
 #links {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-    flex-direction: row;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
 }
 
 a {
 	padding: 15px 20px;
-    border: 2px white solid;
-    border-radius: 5px;
-    color: white;
-    font-size: 30px;
-    text-decoration: none;
+	border: 2px white solid;
+	border-radius: 5px;
+	color: white;
+	font-size: 30px;
+	text-decoration: none;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
 	flex: 1;
-    justify-content: center;
-    align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
 }
 
 a > i {
 	margin-right: 10px;
-    font-size: 40px;
+	font-size: 40px;
 }
 
 a:first-of-type {
@@ -58,14 +80,9 @@ a:hover {
 /* Taken from https://codepen.io/ntan97/pen/GooMeJ and modified */
 
 .blur {
-	/*background-image: -webkit-linear-gradient(bottom left, rgba(43, 40, 50, 0.8) 0%, rgba(83, 86, 99, 0.8) 45%, rgba(69, 77, 91, 0.6) 60%);
-	background-image: -moz-linear-gradient(bottom left, rgba(43, 40, 50, 0.8) 0%, rgba(83, 86, 99, 0.8) 45%, rgba(69, 77, 91, 0.6) 60%);
-	background-image: -o-linear-gradient(bottom left, rgba(43, 40, 50, 0.8) 0%, rgba(83, 86, 99, 0.8) 45%, rgba(69, 77, 91, 0.6) 60%);*/
-	/* Theses are tests, keeping them in case */
-	/* background-image: linear-gradient(to top right, rgba(67, 163, 163, 0.8) 0%, rgba(80, 174, 161, 0.8) 45%, rgba(95, 183, 158, 0.6) 60%);
-	background-image: linear-gradient(to top right, rgba(43, 40, 50, 0.8) 0%, rgba(83, 86, 99, 0.8) 45%, rgba(69, 77, 91, 0.6) 60%);
-	background-image: linear-gradient(to top right, rgba(163,67,79, 0.8) 0%, rgba(176,78,77, 0.8) 45%, rgba(191,87,74, 0.6) 60%); */
-	
+	background-image: -webkit-gradient(linear, left bottom, right top, from(rgba(98, 143, 169, 0.8)), color-stop(45%, rgba(185, 220, 241, 0.8)), color-stop(60%, rgba(87, 171, 220, 0.6)));
+	background-image: -moz-linear-gradient(bottom left, rgba(98, 143, 169, 0.8) 0%, rgba(185, 220, 241, 0.8) 45%, rgba(87, 171, 220, 0.6) 60%);
+	background-image: -o-linear-gradient(bottom left, rgba(98, 143, 169, 0.8) 0%, rgba(185, 220, 241, 0.8) 45%, rgba(87, 171, 220, 0.6) 60%);
 	background-image: linear-gradient(to top right, rgba(98, 143, 169, 0.8) 0%, rgba(185, 220, 241, 0.8) 45%, rgba(87, 171, 220, 0.6) 60%);
 	position: absolute;
 	width: 100%;
@@ -75,9 +92,6 @@ a:hover {
 	-o-filter: blur(20px);
 	filter: blur(20px);
 
-	/*top: -70px;
-	right: -70px;
-	left: -70px;*/
 	padding: 70px;
 	z-index: 0;
 }
@@ -88,13 +102,9 @@ a:hover {
 	height: 100%;
 	width: 100%;
 
-	/*background-image: -webkit-linear-gradient(289deg, rgba(43,40,50,0.8) 0%, rgba(43,40,50,0.4) 46%, rgba(0,0,0,0.05) 50%);
-	background-image: -moz-linear-gradient(289deg, rgba(43,40,50,0.8) 0%, rgba(43,40,50,0.4) 46%, rgba(0,0,0,0.05) 50%);
-	background-image: -o-linear-gradient(289deg, rgba(43,40,50,0.8) 0%, rgba(43,40,50,0.4) 46%, rgba(0,0,0,0.05) 50%);*/
-	/* background-image: linear-gradient(-19deg, rgba(67, 163, 163,0.8) 0%, rgba(67, 163, 163,0.4) 46%, rgba(0,0,0,0.05) 50%);
-	background-image: linear-gradient(-19deg, rgba(43,40,50,0.8) 0%, rgba(43,40,50,0.4) 46%, rgba(0,0,0,0.05) 50%);
-	background-image: linear-gradient(-19deg, rgba(163,67,79,0.8) 0%, rgba(163,67,79,0.4) 46%, rgba(0,0,0,0.05) 50%); */
-	
+	background-image: -webkit-linear-gradient(289deg, rgba(78, 120, 144, 0.8) 0%, rgba(78, 120, 144, 0.4) 46%, rgba(0,0,0,0.05) 50%);
+	background-image: -moz-linear-gradient(289deg, rgba(78, 120, 144, 0.8) 0%, rgba(78, 120, 144, 0.4) 46%, rgba(0,0,0,0.05) 50%);
+	background-image: -o-linear-gradient(289deg, rgba(78, 120, 144, 0.8) 0%, rgba(78, 120, 144, 0.4) 46%, rgba(0,0,0,0.05) 50%);
 	background-image: linear-gradient(-19deg, rgba(78, 120, 144, 0.8) 0%, rgba(78, 120, 144, 0.4) 46%, rgba(0,0,0,0.05) 50%);
 
 	-webkit-filter: blur(70px);
@@ -103,19 +113,21 @@ a:hover {
 	z-index: 1;
 }
 
+/* End of stolen code huehue */
+
 @media screen and (max-width: 600px) {
 	h1 {
 		font-size: 3.5rem;
 	}
-	
+
 	a {
 		font-size: 10px;
 	}
-	
+
 	a > i {
 		font-size: 30px;
 	}
-	
+
 	h3 {
 		font-size: 1rem;
 	}
