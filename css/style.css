@@ -103,7 +103,7 @@ a:hover {
 	-o-filter: blur(20px);
 	filter: blur(20px);
 
-	padding: 70px;
+	/*padding: 70px;*/
 	z-index: 0;
 }
 
